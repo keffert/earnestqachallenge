@@ -1,0 +1,15 @@
+active,name,quantityOrdered,state,result
+# jungle socks order test cases
+# active: 1 => active
+#         2 => smoke
+#         # => comment
+# name: zebra, lion, elephant, giraffe
+# quantityOrdered:
+# state: states of the USA
+# result: error codes/descriptions
+#
+1,zebra,5,NY,
+1,lion,10,CA,
+1,elephant,2,MN,
+1,giraffe,5,ND,
+# end of data

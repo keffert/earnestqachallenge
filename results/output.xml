@@ -1,0 +1,2855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20171204 19:57:51.212" generator="Robot 3.0.2 (Python 2.7.14 on darwin)">
+<suite source="/Users/thomaskeffer/IdeaProjects/GigsterPython/earnest_challenge/tests/OrderTest.robot" id="s1" name="OrderTest">
+<test id="s1-t1" name="Test Order Test Cases">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:51.351" starttime="20171204 19:57:51.350"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Beginning Set Up....</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:51.351" starttime="20171204 19:57:51.351"></status>
+</kw>
+<kw name="Get Environment Variable" library="OperatingSystem">
+<doc>Returns the value of an environment variable with the given name.</doc>
+<arguments>
+<arg>TEST_START_COUNTER</arg>
+<arg>default=${testStartCounterOne}</arg>
+</arguments>
+<assign>
+<var>${testStartCounter}</var>
+</assign>
+<msg timestamp="20171204 19:57:51.352" level="INFO">${testStartCounter} = 1</msg>
+<status status="PASS" endtime="20171204 19:57:51.352" starttime="20171204 19:57:51.351"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>testStartCounter is: ${testStartCounter}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:51.352" starttime="20171204 19:57:51.352"></status>
+</kw>
+<kw name="Get Environment Variable" library="OperatingSystem">
+<doc>Returns the value of an environment variable with the given name.</doc>
+<arguments>
+<arg>TEST_STOP_COUNTER</arg>
+<arg>default=${testStopCounterNines}</arg>
+</arguments>
+<assign>
+<var>${testStopCounter}</var>
+</assign>
+<msg timestamp="20171204 19:57:51.353" level="INFO">${testStopCounter} = 9999</msg>
+<status status="PASS" endtime="20171204 19:57:51.353" starttime="20171204 19:57:51.353"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>testStopCounter is: ${testStopCounter}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:51.354" starttime="20171204 19:57:51.353"></status>
+</kw>
+<kw name="Start Selenium Tests" library="Browser">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20171204 19:57:51.355" level="INFO">Opening browser 'chrome' to base url 'http://jungle-socks.herokuapp.com'</msg>
+<status status="PASS" endtime="20171204 19:57:52.956" starttime="20171204 19:57:51.354"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>30 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:52.959" starttime="20171204 19:57:52.956"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:52.959" starttime="20171204 19:57:51.354"></status>
+</kw>
+<kw name="Get List Of Dicts From Csv File" library="csvLibrary">
+<doc>Return an array of dictionaries found in filename.</doc>
+<arguments>
+<arg>${Filename}</arg>
+</arguments>
+<assign>
+<var>${testCases}</var>
+</assign>
+<msg timestamp="20171204 19:57:52.960" level="INFO">Return an array of dictionaries found in filename ../data/jungle_socks_orders_all_names.csv.
+dictReader list:
+&lt;csv.DictReader instance at 0x102636290&gt;</msg>
+<msg timestamp="20171204 19:57:52.960" level="INFO">${testCases} = [{'active': '1', 'state': 'NY', 'name': 'zebra', 'result': '', 'quantityOrdered': '5'}, {'active': '1', 'state': 'CA', 'name': 'lion', 'result': '', 'quantityOrdered': '10'}, {'active': '1', 'state': ...</msg>
+<status status="PASS" endtime="20171204 19:57:52.960" starttime="20171204 19:57:52.959"></status>
+</kw>
+<kw name="Log List" library="Collections">
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<arguments>
+<arg>${testCases}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:52.961" level="INFO">List length is 4 and it contains following items:
+0: {'active': '1', 'state': 'NY', 'name': 'zebra', 'result': '', 'quantityOrdered': '5'}
+1: {'active': '1', 'state': 'CA', 'name': 'lion', 'result': '', 'quantityOrdered': '10'}
+2: {'active': '1', 'state': 'MN', 'name': 'elephant', 'result': '', 'quantityOrdered': '2'}
+3: {'active': '1', 'state': 'ND', 'name': 'giraffe', 'result': '', 'quantityOrdered': '5'}</msg>
+<status status="PASS" endtime="20171204 19:57:52.961" starttime="20171204 19:57:52.961"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${testCounter}</var>
+</assign>
+<msg timestamp="20171204 19:57:52.962" level="INFO">${testCounter} = 1</msg>
+<status status="PASS" endtime="20171204 19:57:52.962" starttime="20171204 19:57:52.962"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${testCases}</arg>
+</arguments>
+<assign>
+<var>${testLimit}</var>
+</assign>
+<msg timestamp="20171204 19:57:52.963" level="INFO">Length is 4</msg>
+<msg timestamp="20171204 19:57:52.963" level="INFO">${testLimit} = 4</msg>
+<status status="PASS" endtime="20171204 19:57:52.963" starttime="20171204 19:57:52.962"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Set Up Complete.</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:52.963" starttime="20171204 19:57:52.963"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:52.964" starttime="20171204 19:57:52.963"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Beginning Tests...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:52.964" starttime="20171204 19:57:52.964"></status>
+</kw>
+<kw type="for" name="${testCase} IN [ @{testCases} ]">
+<kw type="foritem" name="${testCase} = {'active': '1', 'state': 'NY', 'name': 'zebra', 'result': '', 'quantityOrdered': '5'}">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:52.965" level="INFO">Dictionary size is 5 and it contains following items:
+active: 1
+name: zebra
+quantityOrdered: 5
+result: 
+state: NY</msg>
+<status status="PASS" endtime="20171204 19:57:52.965" starttime="20171204 19:57:52.965"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:52.966" starttime="20171204 19:57:52.965"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Beginning Test ${testCounter} of ${testLimit}...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:52.966" starttime="20171204 19:57:52.966"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:52.966" starttime="20171204 19:57:52.966"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testCounter}</arg>
+</arguments>
+<assign>
+<var>${testCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:52.967" level="INFO">${testCounterNum} = 1</msg>
+<status status="PASS" endtime="20171204 19:57:52.967" starttime="20171204 19:57:52.967"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testStartCounter}</arg>
+</arguments>
+<assign>
+<var>${testStartCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:52.968" level="INFO">${testStartCounterNum} = 1</msg>
+<status status="PASS" endtime="20171204 19:57:52.968" starttime="20171204 19:57:52.967"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testStopCounter}</arg>
+</arguments>
+<assign>
+<var>${testStopCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:52.969" level="INFO">${testStopCounterNum} = 9999</msg>
+<status status="PASS" endtime="20171204 19:57:52.969" starttime="20171204 19:57:52.968"></status>
+</kw>
+<kw name="Set Dict" library="OrderTestData">
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<assign>
+<var>${orderTestData}</var>
+</assign>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting active...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting in stock...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.970" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.971" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:52.972" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:52.973" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.973" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.973" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.973" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.973" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.973" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:52.973" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.973" level="INFO">${orderTestData} = 
+active:                       1
+Order:  
+  name:               zebra
+  inStock:            0
+  quantityOrdered:    5
+  state:              NY
+  price:              13
+  orderSubtotal:      65
+  sales...</msg>
+<status status="PASS" endtime="20171204 19:57:52.973" starttime="20171204 19:57:52.969"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${orderTestData.name}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:52.974" level="INFO">Getting active...</msg>
+<msg timestamp="20171204 19:57:52.974" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.974" level="INFO">Getting in stock...</msg>
+<msg timestamp="20171204 19:57:52.974" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.974" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.975" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.976" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:52.977" level="INFO">Getting state...</msg>
+<status status="PASS" endtime="20171204 19:57:52.978" starttime="20171204 19:57:52.974"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${testCounter} &gt;= ${testStartCounterNum} and ${testCounter} &lt;= ${testStopCounterNum}</arg>
+<arg>Run Order Test With Order Test Data</arg>
+<arg>${orderTestData}</arg>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Run Order Test With Order Test Data" library="Order">
+<arguments>
+<arg>${orderTestData}</arg>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:52.980" level="INFO">Opening url 'http://jungle-socks.herokuapp.com'</msg>
+<status status="PASS" endtime="20171204 19:57:53.127" starttime="20171204 19:57:52.980"></status>
+</kw>
+<kw name="Enter Order Data On Form" library="Order">
+<arguments>
+<arg>${OrderTestData}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Name is ${OrderTestData.name()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.128" level="INFO">Getting name...</msg>
+<status status="PASS" endtime="20171204 19:57:53.129" starttime="20171204 19:57:53.128"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Quantity is ${OrderTestData.quantityOrdered()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.129" level="INFO">Getting quantity ordered...</msg>
+<status status="PASS" endtime="20171204 19:57:53.129" starttime="20171204 19:57:53.129"></status>
+</kw>
+<kw name="Enter Quantity By Name" library="OrderPage">
+<arguments>
+<arg>${OrderTestData.name()}</arg>
+<arg>${OrderTestData.quantityOrdered()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.130" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.130" level="INFO">Getting quantity ordered...</msg>
+<kw name="Get Quantity Element By Name" library="OrderPage">
+<arguments>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${quantityElement}</var>
+</assign>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>id=line_item_quantity_</arg>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${quantityElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.131" level="INFO">${quantityElementLocator} = id=line_item_quantity_zebra</msg>
+<status status="PASS" endtime="20171204 19:57:53.131" starttime="20171204 19:57:53.131"></status>
+</kw>
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>${quantityElementLocator}</arg>
+</arguments>
+<assign>
+<var>${quantityElement}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.147" level="INFO">${quantityElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.7695534766431764-1")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.147" starttime="20171204 19:57:53.131"></status>
+</kw>
+<msg timestamp="20171204 19:57:53.148" level="INFO">${quantityElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.7695534766431764-1")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.148" starttime="20171204 19:57:53.130"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${quantityElement}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.163" starttime="20171204 19:57:53.148"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${quantityElement}</arg>
+<arg>${Quantity}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.163" level="INFO">Typing text '5' into text field '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.7695534766431764-1")&gt;'</msg>
+<status status="PASS" endtime="20171204 19:57:53.243" starttime="20171204 19:57:53.163"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.243" starttime="20171204 19:57:53.129"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>State is ${OrderTestData.state()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.243" level="INFO">Getting state...</msg>
+<status status="PASS" endtime="20171204 19:57:53.244" starttime="20171204 19:57:53.243"></status>
+</kw>
+<kw name="Select State By Value" library="OrderPage">
+<arguments>
+<arg>${OrderTestData.state()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.244" level="INFO">Getting state...</msg>
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>//select[@name='state']</arg>
+</arguments>
+<assign>
+<var>${stateSelectElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.260" level="INFO">${stateSelectElementLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.7695534766431764-2")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.260" starttime="20171204 19:57:53.244"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>${stateSelectElementLocator}</arg>
+<arg>${State}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.261" level="INFO">Selecting value(s) 'NY' from list '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.7695534766431764-2")&gt;'.</msg>
+<status status="PASS" endtime="20171204 19:57:53.326" starttime="20171204 19:57:53.261"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.326" starttime="20171204 19:57:53.244"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.326" starttime="20171204 19:57:53.127"></status>
+</kw>
+<kw name="Submit Form" library="OrderPage">
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>//form/input[@name='commit']</arg>
+</arguments>
+<assign>
+<var>${submitInputElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.342" level="INFO">${submitInputElementLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.7695534766431764-4")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.342" starttime="20171204 19:57:53.327"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${submitInputElementLocator}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.356" starttime="20171204 19:57:53.343"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${submitInputElementLocator}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.357" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.7695534766431764-4")&gt;'.</msg>
+<status status="PASS" endtime="20171204 19:57:53.534" starttime="20171204 19:57:53.356"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.534" starttime="20171204 19:57:53.326"></status>
+</kw>
+<kw name="Verify Order" library="Order">
+<arguments>
+<arg>${OrderTestData}</arg>
+</arguments>
+<kw name="Get Order Subtotal" library="OrderConfirmationPage">
+<assign>
+<var>${orderSubtotal}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_SUBTOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.569" starttime="20171204 19:57:53.535"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_SUBTOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderSubtotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.592" level="INFO">${orderSubtotal} = $65.00</msg>
+<status status="PASS" endtime="20171204 19:57:53.592" starttime="20171204 19:57:53.569"></status>
+</kw>
+<msg timestamp="20171204 19:57:53.592" level="INFO">${orderSubtotal} = $65.00</msg>
+<status status="PASS" endtime="20171204 19:57:53.592" starttime="20171204 19:57:53.535"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Subtotal is ${orderSubtotal}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.593" starttime="20171204 19:57:53.592"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderSubtotal}</arg>
+</arguments>
+<assign>
+<var>${orderSubtotalFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.594" level="INFO">${floatValue} = 65.00</msg>
+<status status="PASS" endtime="20171204 19:57:53.594" starttime="20171204 19:57:53.593"></status>
+</kw>
+<msg timestamp="20171204 19:57:53.594" level="INFO">${orderSubtotalFloat} = 65.00</msg>
+<status status="PASS" endtime="20171204 19:57:53.594" starttime="20171204 19:57:53.593"></status>
+</kw>
+<kw name="Get Order Taxes" library="OrderConfirmationPage">
+<assign>
+<var>${orderTaxes}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_TAXES_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.623" starttime="20171204 19:57:53.594"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_TAXES_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderTaxes}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.648" level="INFO">${orderTaxes} = $3.90</msg>
+<status status="PASS" endtime="20171204 19:57:53.648" starttime="20171204 19:57:53.624"></status>
+</kw>
+<msg timestamp="20171204 19:57:53.649" level="INFO">${orderTaxes} = $3.90</msg>
+<status status="PASS" endtime="20171204 19:57:53.649" starttime="20171204 19:57:53.594"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Taxes is ${orderTaxes}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.649" starttime="20171204 19:57:53.649"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderTaxes}</arg>
+</arguments>
+<assign>
+<var>${orderTaxesFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.650" level="INFO">${floatValue} = 3.90</msg>
+<status status="PASS" endtime="20171204 19:57:53.650" starttime="20171204 19:57:53.650"></status>
+</kw>
+<msg timestamp="20171204 19:57:53.651" level="INFO">${orderTaxesFloat} = 3.90</msg>
+<status status="PASS" endtime="20171204 19:57:53.651" starttime="20171204 19:57:53.650"></status>
+</kw>
+<kw name="Get Order Total" library="OrderConfirmationPage">
+<assign>
+<var>${orderTotal}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_TOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.682" starttime="20171204 19:57:53.651"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_TOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderTotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.705" level="INFO">${orderTotal} = $68.90</msg>
+<status status="PASS" endtime="20171204 19:57:53.705" starttime="20171204 19:57:53.682"></status>
+</kw>
+<msg timestamp="20171204 19:57:53.706" level="INFO">${orderTotal} = $68.90</msg>
+<status status="PASS" endtime="20171204 19:57:53.706" starttime="20171204 19:57:53.651"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Total is ${orderTotal}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.706" starttime="20171204 19:57:53.706"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderTotal}</arg>
+</arguments>
+<assign>
+<var>${orderTotalFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.708" level="INFO">${floatValue} = 68.90</msg>
+<status status="PASS" endtime="20171204 19:57:53.708" starttime="20171204 19:57:53.707"></status>
+</kw>
+<msg timestamp="20171204 19:57:53.708" level="INFO">${orderTotalFloat} = 68.90</msg>
+<status status="PASS" endtime="20171204 19:57:53.708" starttime="20171204 19:57:53.707"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.name()}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.709" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.709" level="INFO">${name} = zebra</msg>
+<status status="PASS" endtime="20171204 19:57:53.709" starttime="20171204 19:57:53.708"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Name is ${name}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.710" starttime="20171204 19:57:53.709"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${OrderTestData.quantityOrdered()} * ${OrderTestData.price(name='${name}')}</arg>
+</arguments>
+<assign>
+<var>${expectedOrderSubtotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.710" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.711" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.711" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.711" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:53.711" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.711" level="INFO">${expectedOrderSubtotal} = 65</msg>
+<status status="PASS" endtime="20171204 19:57:53.711" starttime="20171204 19:57:53.710"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedOrderSubtotal}</arg>
+<arg>${orderSubtotalFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.712" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.712" starttime="20171204 19:57:53.711"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.state()}</arg>
+</arguments>
+<assign>
+<var>${state}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.712" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.712" level="INFO">${state} = NY</msg>
+<status status="PASS" endtime="20171204 19:57:53.712" starttime="20171204 19:57:53.712"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.salesTaxByState(state='${state}')}</arg>
+</arguments>
+<assign>
+<var>${expectedSalesTax}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.713" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:53.713" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.713" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.713" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.713" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.713" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:53.713" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.714" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:53.714" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.714" level="INFO">${expectedSalesTax} = 3.9</msg>
+<status status="PASS" endtime="20171204 19:57:53.714" starttime="20171204 19:57:53.713"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedSalesTax}</arg>
+<arg>${orderTaxesFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.715" level="INFO">Argument types are:
+&lt;type 'float'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.715" starttime="20171204 19:57:53.714"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.orderTotal()}</arg>
+</arguments>
+<assign>
+<var>${expectedTotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.715" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:53.715" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.715" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.715" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting price for zebra...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.716" level="INFO">${expectedTotal} = 68.9</msg>
+<status status="PASS" endtime="20171204 19:57:53.717" starttime="20171204 19:57:53.715"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedTotal}</arg>
+<arg>${orderTotalFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.717" level="INFO">Argument types are:
+&lt;type 'float'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.717" starttime="20171204 19:57:53.717"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.717" starttime="20171204 19:57:53.534"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>***** Test Passed *****</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.718" starttime="20171204 19:57:53.718"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.718" starttime="20171204 19:57:52.979"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.718" starttime="20171204 19:57:52.978"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>${testCounter} &gt;= ${testStartCounterNum} and ${testCounter} &lt;= ${testStopCounterNum}</arg>
+<arg>Log To Console</arg>
+<arg>***** Test Skipped ******</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.719" starttime="20171204 19:57:53.718"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${testCounter} + 1</arg>
+</arguments>
+<assign>
+<var>${testCounter}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.719" level="INFO">${testCounter} = 2</msg>
+<status status="PASS" endtime="20171204 19:57:53.719" starttime="20171204 19:57:53.719"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.719" starttime="20171204 19:57:52.964"></status>
+</kw>
+<kw type="foritem" name="${testCase} = {'active': '1', 'state': 'CA', 'name': 'lion', 'result': '', 'quantityOrdered': '10'}">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.720" level="INFO">Dictionary size is 5 and it contains following items:
+active: 1
+name: lion
+quantityOrdered: 10
+result: 
+state: CA</msg>
+<status status="PASS" endtime="20171204 19:57:53.720" starttime="20171204 19:57:53.720"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.721" starttime="20171204 19:57:53.720"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Beginning Test ${testCounter} of ${testLimit}...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.721" starttime="20171204 19:57:53.721"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.722" starttime="20171204 19:57:53.721"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testCounter}</arg>
+</arguments>
+<assign>
+<var>${testCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.722" level="INFO">${testCounterNum} = 2</msg>
+<status status="PASS" endtime="20171204 19:57:53.722" starttime="20171204 19:57:53.722"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testStartCounter}</arg>
+</arguments>
+<assign>
+<var>${testStartCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.723" level="INFO">${testStartCounterNum} = 1</msg>
+<status status="PASS" endtime="20171204 19:57:53.723" starttime="20171204 19:57:53.722"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testStopCounter}</arg>
+</arguments>
+<assign>
+<var>${testStopCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.723" level="INFO">${testStopCounterNum} = 9999</msg>
+<status status="PASS" endtime="20171204 19:57:53.723" starttime="20171204 19:57:53.723"></status>
+</kw>
+<kw name="Set Dict" library="OrderTestData">
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<assign>
+<var>${orderTestData}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting active...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting in stock...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.724" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.725" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.726" level="INFO">${orderTestData} = 
+active:                       1
+Order:  
+  name:               lion
+  inStock:            0
+  quantityOrdered:    10
+  state:              CA
+  price:              20
+  orderSubtotal:      200
+  sale...</msg>
+<status status="PASS" endtime="20171204 19:57:53.726" starttime="20171204 19:57:53.723"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${orderTestData.name}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.726" level="INFO">Getting active...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting in stock...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.727" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:53.728" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.729" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:53.729" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:53.729" level="INFO">Getting state...</msg>
+<status status="PASS" endtime="20171204 19:57:53.729" starttime="20171204 19:57:53.726"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${testCounter} &gt;= ${testStartCounterNum} and ${testCounter} &lt;= ${testStopCounterNum}</arg>
+<arg>Run Order Test With Order Test Data</arg>
+<arg>${orderTestData}</arg>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Run Order Test With Order Test Data" library="Order">
+<arguments>
+<arg>${orderTestData}</arg>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.730" level="INFO">Opening url 'http://jungle-socks.herokuapp.com'</msg>
+<status status="PASS" endtime="20171204 19:57:53.854" starttime="20171204 19:57:53.730"></status>
+</kw>
+<kw name="Enter Order Data On Form" library="Order">
+<arguments>
+<arg>${OrderTestData}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Name is ${OrderTestData.name()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.855" level="INFO">Getting name...</msg>
+<status status="PASS" endtime="20171204 19:57:53.855" starttime="20171204 19:57:53.855"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Quantity is ${OrderTestData.quantityOrdered()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.856" level="INFO">Getting quantity ordered...</msg>
+<status status="PASS" endtime="20171204 19:57:53.856" starttime="20171204 19:57:53.856"></status>
+</kw>
+<kw name="Enter Quantity By Name" library="OrderPage">
+<arguments>
+<arg>${OrderTestData.name()}</arg>
+<arg>${OrderTestData.quantityOrdered()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.857" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:53.857" level="INFO">Getting quantity ordered...</msg>
+<kw name="Get Quantity Element By Name" library="OrderPage">
+<arguments>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${quantityElement}</var>
+</assign>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>id=line_item_quantity_</arg>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${quantityElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.859" level="INFO">${quantityElementLocator} = id=line_item_quantity_lion</msg>
+<status status="PASS" endtime="20171204 19:57:53.859" starttime="20171204 19:57:53.858"></status>
+</kw>
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>${quantityElementLocator}</arg>
+</arguments>
+<assign>
+<var>${quantityElement}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.875" level="INFO">${quantityElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.6435782198952111-1")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.875" starttime="20171204 19:57:53.859"></status>
+</kw>
+<msg timestamp="20171204 19:57:53.875" level="INFO">${quantityElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.6435782198952111-1")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.875" starttime="20171204 19:57:53.858"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${quantityElement}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:53.889" starttime="20171204 19:57:53.875"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${quantityElement}</arg>
+<arg>${Quantity}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.890" level="INFO">Typing text '10' into text field '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.6435782198952111-1")&gt;'</msg>
+<status status="PASS" endtime="20171204 19:57:53.947" starttime="20171204 19:57:53.889"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:53.948" starttime="20171204 19:57:53.856"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>State is ${OrderTestData.state()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.948" level="INFO">Getting state...</msg>
+<status status="PASS" endtime="20171204 19:57:53.948" starttime="20171204 19:57:53.948"></status>
+</kw>
+<kw name="Select State By Value" library="OrderPage">
+<arguments>
+<arg>${OrderTestData.state()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.949" level="INFO">Getting state...</msg>
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>//select[@name='state']</arg>
+</arguments>
+<assign>
+<var>${stateSelectElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:53.955" level="INFO">${stateSelectElementLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.6435782198952111-2")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:53.955" starttime="20171204 19:57:53.949"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>${stateSelectElementLocator}</arg>
+<arg>${State}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:53.956" level="INFO">Selecting value(s) 'CA' from list '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.6435782198952111-2")&gt;'.</msg>
+<status status="PASS" endtime="20171204 19:57:54.024" starttime="20171204 19:57:53.955"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.024" starttime="20171204 19:57:53.949"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.024" starttime="20171204 19:57:53.854"></status>
+</kw>
+<kw name="Submit Form" library="OrderPage">
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>//form/input[@name='commit']</arg>
+</arguments>
+<assign>
+<var>${submitInputElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.031" level="INFO">${submitInputElementLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.6435782198952111-4")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.031" starttime="20171204 19:57:54.025"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${submitInputElementLocator}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.047" starttime="20171204 19:57:54.031"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${submitInputElementLocator}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.047" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.6435782198952111-4")&gt;'.</msg>
+<status status="PASS" endtime="20171204 19:57:54.212" starttime="20171204 19:57:54.047"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.213" starttime="20171204 19:57:54.024"></status>
+</kw>
+<kw name="Verify Order" library="Order">
+<arguments>
+<arg>${OrderTestData}</arg>
+</arguments>
+<kw name="Get Order Subtotal" library="OrderConfirmationPage">
+<assign>
+<var>${orderSubtotal}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_SUBTOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.234" starttime="20171204 19:57:54.214"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_SUBTOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderSubtotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.256" level="INFO">${orderSubtotal} = $200.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.256" starttime="20171204 19:57:54.234"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.256" level="INFO">${orderSubtotal} = $200.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.256" starttime="20171204 19:57:54.213"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Subtotal is ${orderSubtotal}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.257" starttime="20171204 19:57:54.256"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderSubtotal}</arg>
+</arguments>
+<assign>
+<var>${orderSubtotalFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.258" level="INFO">${floatValue} = 200.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.258" starttime="20171204 19:57:54.257"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.258" level="INFO">${orderSubtotalFloat} = 200.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.258" starttime="20171204 19:57:54.257"></status>
+</kw>
+<kw name="Get Order Taxes" library="OrderConfirmationPage">
+<assign>
+<var>${orderTaxes}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_TAXES_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.280" starttime="20171204 19:57:54.259"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_TAXES_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderTaxes}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.305" level="INFO">${orderTaxes} = $16.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.305" starttime="20171204 19:57:54.281"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.305" level="INFO">${orderTaxes} = $16.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.305" starttime="20171204 19:57:54.259"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Taxes is ${orderTaxes}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.306" starttime="20171204 19:57:54.306"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderTaxes}</arg>
+</arguments>
+<assign>
+<var>${orderTaxesFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.307" level="INFO">${floatValue} = 16.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.307" starttime="20171204 19:57:54.307"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.307" level="INFO">${orderTaxesFloat} = 16.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.307" starttime="20171204 19:57:54.306"></status>
+</kw>
+<kw name="Get Order Total" library="OrderConfirmationPage">
+<assign>
+<var>${orderTotal}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_TOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.329" starttime="20171204 19:57:54.308"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_TOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderTotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.352" level="INFO">${orderTotal} = $216.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.352" starttime="20171204 19:57:54.329"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.353" level="INFO">${orderTotal} = $216.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.353" starttime="20171204 19:57:54.308"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Total is ${orderTotal}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.354" starttime="20171204 19:57:54.353"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderTotal}</arg>
+</arguments>
+<assign>
+<var>${orderTotalFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.355" level="INFO">${floatValue} = 216.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.356" starttime="20171204 19:57:54.355"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.356" level="INFO">${orderTotalFloat} = 216.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.356" starttime="20171204 19:57:54.355"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.name()}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.356" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.356" level="INFO">${name} = lion</msg>
+<status status="PASS" endtime="20171204 19:57:54.357" starttime="20171204 19:57:54.356"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Name is ${name}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.357" starttime="20171204 19:57:54.357"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${OrderTestData.quantityOrdered()} * ${OrderTestData.price(name='${name}')}</arg>
+</arguments>
+<assign>
+<var>${expectedOrderSubtotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.358" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.358" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.358" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.358" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:54.358" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.359" level="INFO">${expectedOrderSubtotal} = 200</msg>
+<status status="PASS" endtime="20171204 19:57:54.359" starttime="20171204 19:57:54.357"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedOrderSubtotal}</arg>
+<arg>${orderSubtotalFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.359" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.359" starttime="20171204 19:57:54.359"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.state()}</arg>
+</arguments>
+<assign>
+<var>${state}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.360" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.360" level="INFO">${state} = CA</msg>
+<status status="PASS" endtime="20171204 19:57:54.360" starttime="20171204 19:57:54.360"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.salesTaxByState(state='${state}')}</arg>
+</arguments>
+<assign>
+<var>${expectedSalesTax}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.361" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:54.361" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.361" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.361" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.361" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.361" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:54.361" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.361" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.362" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.362" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.362" level="INFO">${expectedSalesTax} = 16.0</msg>
+<status status="PASS" endtime="20171204 19:57:54.362" starttime="20171204 19:57:54.360"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedSalesTax}</arg>
+<arg>${orderTaxesFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.362" level="INFO">Argument types are:
+&lt;type 'float'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.362" starttime="20171204 19:57:54.362"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.orderTotal()}</arg>
+</arguments>
+<assign>
+<var>${expectedTotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting price for lion...</msg>
+<msg timestamp="20171204 19:57:54.363" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.364" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.364" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.364" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.364" level="INFO">${expectedTotal} = 216.0</msg>
+<status status="PASS" endtime="20171204 19:57:54.364" starttime="20171204 19:57:54.363"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedTotal}</arg>
+<arg>${orderTotalFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.365" level="INFO">Argument types are:
+&lt;type 'float'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.365" starttime="20171204 19:57:54.364"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.365" starttime="20171204 19:57:54.213"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>***** Test Passed *****</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.366" starttime="20171204 19:57:54.366"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.366" starttime="20171204 19:57:53.729"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.366" starttime="20171204 19:57:53.729"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>${testCounter} &gt;= ${testStartCounterNum} and ${testCounter} &lt;= ${testStopCounterNum}</arg>
+<arg>Log To Console</arg>
+<arg>***** Test Skipped ******</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.367" starttime="20171204 19:57:54.366"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${testCounter} + 1</arg>
+</arguments>
+<assign>
+<var>${testCounter}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.368" level="INFO">${testCounter} = 3</msg>
+<status status="PASS" endtime="20171204 19:57:54.368" starttime="20171204 19:57:54.367"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.368" starttime="20171204 19:57:53.720"></status>
+</kw>
+<kw type="foritem" name="${testCase} = {'active': '1', 'state': 'MN', 'name': 'elephant', 'result': '', 'quantityOrdered': '2'}">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.369" level="INFO">Dictionary size is 5 and it contains following items:
+active: 1
+name: elephant
+quantityOrdered: 2
+result: 
+state: MN</msg>
+<status status="PASS" endtime="20171204 19:57:54.369" starttime="20171204 19:57:54.368"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.369" starttime="20171204 19:57:54.369"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Beginning Test ${testCounter} of ${testLimit}...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.370" starttime="20171204 19:57:54.369"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.370" starttime="20171204 19:57:54.370"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testCounter}</arg>
+</arguments>
+<assign>
+<var>${testCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.371" level="INFO">${testCounterNum} = 3</msg>
+<status status="PASS" endtime="20171204 19:57:54.371" starttime="20171204 19:57:54.371"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testStartCounter}</arg>
+</arguments>
+<assign>
+<var>${testStartCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.372" level="INFO">${testStartCounterNum} = 1</msg>
+<status status="PASS" endtime="20171204 19:57:54.372" starttime="20171204 19:57:54.371"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testStopCounter}</arg>
+</arguments>
+<assign>
+<var>${testStopCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.372" level="INFO">${testStopCounterNum} = 9999</msg>
+<status status="PASS" endtime="20171204 19:57:54.372" starttime="20171204 19:57:54.372"></status>
+</kw>
+<kw name="Set Dict" library="OrderTestData">
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<assign>
+<var>${orderTestData}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting active...</msg>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting in stock...</msg>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.373" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.374" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.375" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">${orderTestData} = 
+active:                       1
+Order:  
+  name:               elephant
+  inStock:            0
+  quantityOrdered:    2
+  state:              MN
+  price:              35
+  orderSubtotal:      70
+  sa...</msg>
+<status status="PASS" endtime="20171204 19:57:54.376" starttime="20171204 19:57:54.373"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${orderTestData.name}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting active...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting in stock...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.376" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.377" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.378" level="INFO">Getting state...</msg>
+<status status="PASS" endtime="20171204 19:57:54.379" starttime="20171204 19:57:54.376"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${testCounter} &gt;= ${testStartCounterNum} and ${testCounter} &lt;= ${testStopCounterNum}</arg>
+<arg>Run Order Test With Order Test Data</arg>
+<arg>${orderTestData}</arg>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Run Order Test With Order Test Data" library="Order">
+<arguments>
+<arg>${orderTestData}</arg>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.380" level="INFO">Opening url 'http://jungle-socks.herokuapp.com'</msg>
+<status status="PASS" endtime="20171204 19:57:54.503" starttime="20171204 19:57:54.380"></status>
+</kw>
+<kw name="Enter Order Data On Form" library="Order">
+<arguments>
+<arg>${OrderTestData}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Name is ${OrderTestData.name()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.504" level="INFO">Getting name...</msg>
+<status status="PASS" endtime="20171204 19:57:54.504" starttime="20171204 19:57:54.504"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Quantity is ${OrderTestData.quantityOrdered()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.505" level="INFO">Getting quantity ordered...</msg>
+<status status="PASS" endtime="20171204 19:57:54.505" starttime="20171204 19:57:54.504"></status>
+</kw>
+<kw name="Enter Quantity By Name" library="OrderPage">
+<arguments>
+<arg>${OrderTestData.name()}</arg>
+<arg>${OrderTestData.quantityOrdered()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.506" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.506" level="INFO">Getting quantity ordered...</msg>
+<kw name="Get Quantity Element By Name" library="OrderPage">
+<arguments>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${quantityElement}</var>
+</assign>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>id=line_item_quantity_</arg>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${quantityElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.507" level="INFO">${quantityElementLocator} = id=line_item_quantity_elephant</msg>
+<status status="PASS" endtime="20171204 19:57:54.507" starttime="20171204 19:57:54.507"></status>
+</kw>
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>${quantityElementLocator}</arg>
+</arguments>
+<assign>
+<var>${quantityElement}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.525" level="INFO">${quantityElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.43302719512835863-1")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.525" starttime="20171204 19:57:54.508"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.525" level="INFO">${quantityElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.43302719512835863-1")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.525" starttime="20171204 19:57:54.506"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${quantityElement}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.539" starttime="20171204 19:57:54.525"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${quantityElement}</arg>
+<arg>${Quantity}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.540" level="INFO">Typing text '2' into text field '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.43302719512835863-1")&gt;'</msg>
+<status status="PASS" endtime="20171204 19:57:54.596" starttime="20171204 19:57:54.539"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.596" starttime="20171204 19:57:54.505"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>State is ${OrderTestData.state()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.597" level="INFO">Getting state...</msg>
+<status status="PASS" endtime="20171204 19:57:54.597" starttime="20171204 19:57:54.597"></status>
+</kw>
+<kw name="Select State By Value" library="OrderPage">
+<arguments>
+<arg>${OrderTestData.state()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.597" level="INFO">Getting state...</msg>
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>//select[@name='state']</arg>
+</arguments>
+<assign>
+<var>${stateSelectElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.604" level="INFO">${stateSelectElementLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.43302719512835863-2")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.604" starttime="20171204 19:57:54.598"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>${stateSelectElementLocator}</arg>
+<arg>${State}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.605" level="INFO">Selecting value(s) 'MN' from list '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.43302719512835863-2")&gt;'.</msg>
+<status status="PASS" endtime="20171204 19:57:54.670" starttime="20171204 19:57:54.604"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.670" starttime="20171204 19:57:54.597"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.671" starttime="20171204 19:57:54.503"></status>
+</kw>
+<kw name="Submit Form" library="OrderPage">
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>//form/input[@name='commit']</arg>
+</arguments>
+<assign>
+<var>${submitInputElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.678" level="INFO">${submitInputElementLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.43302719512835863-4")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.678" starttime="20171204 19:57:54.671"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${submitInputElementLocator}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.691" starttime="20171204 19:57:54.678"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${submitInputElementLocator}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.692" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.43302719512835863-4")&gt;'.</msg>
+<status status="PASS" endtime="20171204 19:57:54.846" starttime="20171204 19:57:54.692"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:54.847" starttime="20171204 19:57:54.671"></status>
+</kw>
+<kw name="Verify Order" library="Order">
+<arguments>
+<arg>${OrderTestData}</arg>
+</arguments>
+<kw name="Get Order Subtotal" library="OrderConfirmationPage">
+<assign>
+<var>${orderSubtotal}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_SUBTOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.871" starttime="20171204 19:57:54.848"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_SUBTOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderSubtotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.898" level="INFO">${orderSubtotal} = $70.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.898" starttime="20171204 19:57:54.871"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.899" level="INFO">${orderSubtotal} = $70.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.899" starttime="20171204 19:57:54.847"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Subtotal is ${orderSubtotal}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.899" starttime="20171204 19:57:54.899"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderSubtotal}</arg>
+</arguments>
+<assign>
+<var>${orderSubtotalFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.900" level="INFO">${floatValue} = 70.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.900" starttime="20171204 19:57:54.900"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.901" level="INFO">${orderSubtotalFloat} = 70.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.901" starttime="20171204 19:57:54.899"></status>
+</kw>
+<kw name="Get Order Taxes" library="OrderConfirmationPage">
+<assign>
+<var>${orderTaxes}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_TAXES_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.922" starttime="20171204 19:57:54.901"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_TAXES_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderTaxes}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.946" level="INFO">${orderTaxes} = $0.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.946" starttime="20171204 19:57:54.922"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.947" level="INFO">${orderTaxes} = $0.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.947" starttime="20171204 19:57:54.901"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Taxes is ${orderTaxes}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.947" starttime="20171204 19:57:54.947"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderTaxes}</arg>
+</arguments>
+<assign>
+<var>${orderTaxesFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.948" level="INFO">${floatValue} = 0.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.948" starttime="20171204 19:57:54.948"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.949" level="INFO">${orderTaxesFloat} = 0.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.949" starttime="20171204 19:57:54.947"></status>
+</kw>
+<kw name="Get Order Total" library="OrderConfirmationPage">
+<assign>
+<var>${orderTotal}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_TOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.969" starttime="20171204 19:57:54.949"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_TOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderTotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.992" level="INFO">${orderTotal} = $70.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.992" starttime="20171204 19:57:54.970"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.992" level="INFO">${orderTotal} = $70.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.992" starttime="20171204 19:57:54.949"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Total is ${orderTotal}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.993" starttime="20171204 19:57:54.993"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderTotal}</arg>
+</arguments>
+<assign>
+<var>${orderTotalFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.994" level="INFO">${floatValue} = 70.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.994" starttime="20171204 19:57:54.994"></status>
+</kw>
+<msg timestamp="20171204 19:57:54.994" level="INFO">${orderTotalFloat} = 70.00</msg>
+<status status="PASS" endtime="20171204 19:57:54.994" starttime="20171204 19:57:54.993"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.name()}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.995" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.995" level="INFO">${name} = elephant</msg>
+<status status="PASS" endtime="20171204 19:57:54.995" starttime="20171204 19:57:54.994"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Name is ${name}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:54.995" starttime="20171204 19:57:54.995"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${OrderTestData.quantityOrdered()} * ${OrderTestData.price(name='${name}')}</arg>
+</arguments>
+<assign>
+<var>${expectedOrderSubtotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.996" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.996" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.996" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.996" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.996" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.997" level="INFO">${expectedOrderSubtotal} = 70</msg>
+<status status="PASS" endtime="20171204 19:57:54.997" starttime="20171204 19:57:54.996"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedOrderSubtotal}</arg>
+<arg>${orderSubtotalFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.997" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:54.997" starttime="20171204 19:57:54.997"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.state()}</arg>
+</arguments>
+<assign>
+<var>${state}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.998" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.998" level="INFO">${state} = MN</msg>
+<status status="PASS" endtime="20171204 19:57:54.998" starttime="20171204 19:57:54.997"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.salesTaxByState(state='${state}')}</arg>
+</arguments>
+<assign>
+<var>${expectedSalesTax}</var>
+</assign>
+<msg timestamp="20171204 19:57:54.998" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:54.998" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:54.998" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:54.998" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.998" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.999" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:54.999" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:54.999" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:54.999" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.999" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.999" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:54.999" level="INFO">${expectedSalesTax} = 0.0</msg>
+<status status="PASS" endtime="20171204 19:57:54.999" starttime="20171204 19:57:54.998"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedSalesTax}</arg>
+<arg>${orderTaxesFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:54.999" level="INFO">Argument types are:
+&lt;type 'float'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:55.000" starttime="20171204 19:57:54.999"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.orderTotal()}</arg>
+</arguments>
+<assign>
+<var>${expectedTotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.000" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:55.000" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.000" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.000" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.000" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.000" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:55.000" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.000" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting price for elephant...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.001" level="INFO">${expectedTotal} = 70.0</msg>
+<status status="PASS" endtime="20171204 19:57:55.001" starttime="20171204 19:57:55.000"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedTotal}</arg>
+<arg>${orderTotalFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.002" level="INFO">Argument types are:
+&lt;type 'float'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:55.002" starttime="20171204 19:57:55.002"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:55.002" starttime="20171204 19:57:54.847"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>***** Test Passed *****</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.002" starttime="20171204 19:57:55.002"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:55.003" starttime="20171204 19:57:54.379"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:55.003" starttime="20171204 19:57:54.379"></status>
+</kw>
+<kw name="Run Keyword Unless" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is false.</doc>
+<arguments>
+<arg>${testCounter} &gt;= ${testStartCounterNum} and ${testCounter} &lt;= ${testStopCounterNum}</arg>
+<arg>Log To Console</arg>
+<arg>***** Test Skipped ******</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.003" starttime="20171204 19:57:55.003"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${testCounter} + 1</arg>
+</arguments>
+<assign>
+<var>${testCounter}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.004" level="INFO">${testCounter} = 4</msg>
+<status status="PASS" endtime="20171204 19:57:55.004" starttime="20171204 19:57:55.003"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:55.004" starttime="20171204 19:57:54.368"></status>
+</kw>
+<kw type="foritem" name="${testCase} = {'active': '1', 'state': 'ND', 'name': 'giraffe', 'result': '', 'quantityOrdered': '5'}">
+<kw name="Log Dictionary" library="Collections">
+<doc>Logs the size and contents of the ``dictionary`` using given ``level``.</doc>
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.004" level="INFO">Dictionary size is 5 and it contains following items:
+active: 1
+name: giraffe
+quantityOrdered: 5
+result: 
+state: ND</msg>
+<status status="PASS" endtime="20171204 19:57:55.004" starttime="20171204 19:57:55.004"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.005" starttime="20171204 19:57:55.005"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Beginning Test ${testCounter} of ${testLimit}...</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.005" starttime="20171204 19:57:55.005"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.006" starttime="20171204 19:57:55.006"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testCounter}</arg>
+</arguments>
+<assign>
+<var>${testCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.006" level="INFO">${testCounterNum} = 4</msg>
+<status status="PASS" endtime="20171204 19:57:55.006" starttime="20171204 19:57:55.006"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testStartCounter}</arg>
+</arguments>
+<assign>
+<var>${testStartCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.007" level="INFO">${testStartCounterNum} = 1</msg>
+<status status="PASS" endtime="20171204 19:57:55.007" starttime="20171204 19:57:55.007"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${testStopCounter}</arg>
+</arguments>
+<assign>
+<var>${testStopCounterNum}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.008" level="INFO">${testStopCounterNum} = 9999</msg>
+<status status="PASS" endtime="20171204 19:57:55.008" starttime="20171204 19:57:55.007"></status>
+</kw>
+<kw name="Set Dict" library="OrderTestData">
+<arguments>
+<arg>${testCase}</arg>
+</arguments>
+<assign>
+<var>${orderTestData}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.008" level="INFO">Getting active...</msg>
+<msg timestamp="20171204 19:57:55.008" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting in stock...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.009" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.010" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.011" level="INFO">${orderTestData} = 
+active:                       1
+Order:  
+  name:               giraffe
+  inStock:            0
+  quantityOrdered:    5
+  state:              ND
+  price:              17
+  orderSubtotal:      85
+  sal...</msg>
+<status status="PASS" endtime="20171204 19:57:55.011" starttime="20171204 19:57:55.008"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${orderTestData.name}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting active...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting in stock...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.012" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.013" level="INFO">Getting order total...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:55.014" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.015" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.015" level="INFO">Getting state...</msg>
+<status status="PASS" endtime="20171204 19:57:55.015" starttime="20171204 19:57:55.012"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${testCounter} &gt;= ${testStartCounterNum} and ${testCounter} &lt;= ${testStopCounterNum}</arg>
+<arg>Run Order Test With Order Test Data</arg>
+<arg>${orderTestData}</arg>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Run Order Test With Order Test Data" library="Order">
+<arguments>
+<arg>${orderTestData}</arg>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.017" level="INFO">Opening url 'http://jungle-socks.herokuapp.com'</msg>
+<status status="PASS" endtime="20171204 19:57:55.148" starttime="20171204 19:57:55.016"></status>
+</kw>
+<kw name="Enter Order Data On Form" library="Order">
+<arguments>
+<arg>${OrderTestData}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Name is ${OrderTestData.name()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.149" level="INFO">Getting name...</msg>
+<status status="PASS" endtime="20171204 19:57:55.150" starttime="20171204 19:57:55.149"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Quantity is ${OrderTestData.quantityOrdered()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.150" level="INFO">Getting quantity ordered...</msg>
+<status status="PASS" endtime="20171204 19:57:55.150" starttime="20171204 19:57:55.150"></status>
+</kw>
+<kw name="Enter Quantity By Name" library="OrderPage">
+<arguments>
+<arg>${OrderTestData.name()}</arg>
+<arg>${OrderTestData.quantityOrdered()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.151" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.151" level="INFO">Getting quantity ordered...</msg>
+<kw name="Get Quantity Element By Name" library="OrderPage">
+<arguments>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${quantityElement}</var>
+</assign>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>id=line_item_quantity_</arg>
+<arg>${Name}</arg>
+</arguments>
+<assign>
+<var>${quantityElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.152" level="INFO">${quantityElementLocator} = id=line_item_quantity_giraffe</msg>
+<status status="PASS" endtime="20171204 19:57:55.152" starttime="20171204 19:57:55.151"></status>
+</kw>
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>${quantityElementLocator}</arg>
+</arguments>
+<assign>
+<var>${quantityElement}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.168" level="INFO">${quantityElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.4622543262060459-1")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:55.169" starttime="20171204 19:57:55.152"></status>
+</kw>
+<msg timestamp="20171204 19:57:55.169" level="INFO">${quantityElement} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.4622543262060459-1")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:55.169" starttime="20171204 19:57:55.151"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${quantityElement}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.183" starttime="20171204 19:57:55.169"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${quantityElement}</arg>
+<arg>${Quantity}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.184" level="INFO">Typing text '5' into text field '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.4622543262060459-1")&gt;'</msg>
+<status status="PASS" endtime="20171204 19:57:55.239" starttime="20171204 19:57:55.183"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:55.239" starttime="20171204 19:57:55.150"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>State is ${OrderTestData.state()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.239" level="INFO">Getting state...</msg>
+<status status="PASS" endtime="20171204 19:57:55.240" starttime="20171204 19:57:55.239"></status>
+</kw>
+<kw name="Select State By Value" library="OrderPage">
+<arguments>
+<arg>${OrderTestData.state()}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.240" level="INFO">Getting state...</msg>
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>//select[@name='state']</arg>
+</arguments>
+<assign>
+<var>${stateSelectElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.247" level="INFO">${stateSelectElementLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.4622543262060459-2")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:55.247" starttime="20171204 19:57:55.241"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>${stateSelectElementLocator}</arg>
+<arg>${State}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.247" level="INFO">Selecting value(s) 'ND' from list '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.4622543262060459-2")&gt;'.</msg>
+<status status="PASS" endtime="20171204 19:57:55.312" starttime="20171204 19:57:55.247"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:55.312" starttime="20171204 19:57:55.240"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:55.312" starttime="20171204 19:57:55.148"></status>
+</kw>
+<kw name="Submit Form" library="OrderPage">
+<kw name="Get Webelement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given locator.</doc>
+<arguments>
+<arg>//form/input[@name='commit']</arg>
+</arguments>
+<assign>
+<var>${submitInputElementLocator}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.318" level="INFO">${submitInputElementLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.4622543262060459-4")&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:55.318" starttime="20171204 19:57:55.313"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${submitInputElementLocator}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.335" starttime="20171204 19:57:55.319"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${submitInputElementLocator}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.336" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="dc988e77e609318c84e71bb7e1945191", element="0.4622543262060459-4")&gt;'.</msg>
+<status status="PASS" endtime="20171204 19:57:55.498" starttime="20171204 19:57:55.336"></status>
+</kw>
+<status status="PASS" endtime="20171204 19:57:55.498" starttime="20171204 19:57:55.313"></status>
+</kw>
+<kw name="Verify Order" library="Order">
+<arguments>
+<arg>${OrderTestData}</arg>
+</arguments>
+<kw name="Get Order Subtotal" library="OrderConfirmationPage">
+<assign>
+<var>${orderSubtotal}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_SUBTOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.519" starttime="20171204 19:57:55.499"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_SUBTOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderSubtotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.540" level="INFO">${orderSubtotal} = $85.00</msg>
+<status status="PASS" endtime="20171204 19:57:55.541" starttime="20171204 19:57:55.519"></status>
+</kw>
+<msg timestamp="20171204 19:57:55.541" level="INFO">${orderSubtotal} = $85.00</msg>
+<status status="PASS" endtime="20171204 19:57:55.541" starttime="20171204 19:57:55.499"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Subtotal is ${orderSubtotal}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.542" starttime="20171204 19:57:55.541"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderSubtotal}</arg>
+</arguments>
+<assign>
+<var>${orderSubtotalFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.543" level="INFO">${floatValue} = 85.00</msg>
+<status status="PASS" endtime="20171204 19:57:55.543" starttime="20171204 19:57:55.542"></status>
+</kw>
+<msg timestamp="20171204 19:57:55.543" level="INFO">${orderSubtotalFloat} = 85.00</msg>
+<status status="PASS" endtime="20171204 19:57:55.543" starttime="20171204 19:57:55.542"></status>
+</kw>
+<kw name="Get Order Taxes" library="OrderConfirmationPage">
+<assign>
+<var>${orderTaxes}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_TAXES_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.565" starttime="20171204 19:57:55.543"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_TAXES_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderTaxes}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.589" level="INFO">${orderTaxes} = $8.50</msg>
+<status status="PASS" endtime="20171204 19:57:55.589" starttime="20171204 19:57:55.565"></status>
+</kw>
+<msg timestamp="20171204 19:57:55.590" level="INFO">${orderTaxes} = $8.50</msg>
+<status status="PASS" endtime="20171204 19:57:55.590" starttime="20171204 19:57:55.543"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Taxes is ${orderTaxes}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.590" starttime="20171204 19:57:55.590"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderTaxes}</arg>
+</arguments>
+<assign>
+<var>${orderTaxesFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.591" level="INFO">${floatValue} = 8.50</msg>
+<status status="PASS" endtime="20171204 19:57:55.591" starttime="20171204 19:57:55.591"></status>
+</kw>
+<msg timestamp="20171204 19:57:55.592" level="INFO">${orderTaxesFloat} = 8.50</msg>
+<status status="PASS" endtime="20171204 19:57:55.592" starttime="20171204 19:57:55.590"></status>
+</kw>
+<kw name="Get Order Total" library="OrderConfirmationPage">
+<assign>
+<var>${orderTotal}</var>
+</assign>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${ORDER_TOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.612" starttime="20171204 19:57:55.592"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>${ORDER_TOTAL_ELEMENT_LOCATOR}</arg>
+</arguments>
+<assign>
+<var>${orderTotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.636" level="INFO">${orderTotal} = $93.50</msg>
+<status status="PASS" endtime="20171204 19:57:55.636" starttime="20171204 19:57:55.613"></status>
+</kw>
+<msg timestamp="20171204 19:57:55.636" level="INFO">${orderTotal} = $93.50</msg>
+<status status="PASS" endtime="20171204 19:57:55.636" starttime="20171204 19:57:55.592"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Order Total is ${orderTotal}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.638" starttime="20171204 19:57:55.636"></status>
+</kw>
+<kw name="Remove Dollar Sign" library="Order">
+<arguments>
+<arg>${orderTotal}</arg>
+</arguments>
+<assign>
+<var>${orderTotalFloat}</var>
+</assign>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${DollarValue}</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${floatValue}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.639" level="INFO">${floatValue} = 93.50</msg>
+<status status="PASS" endtime="20171204 19:57:55.639" starttime="20171204 19:57:55.638"></status>
+</kw>
+<msg timestamp="20171204 19:57:55.639" level="INFO">${orderTotalFloat} = 93.50</msg>
+<status status="PASS" endtime="20171204 19:57:55.639" starttime="20171204 19:57:55.638"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.name()}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.640" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.640" level="INFO">${name} = giraffe</msg>
+<status status="PASS" endtime="20171204 19:57:55.640" starttime="20171204 19:57:55.639"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Name is ${name}</arg>
+</arguments>
+<status status="PASS" endtime="20171204 19:57:55.640" starttime="20171204 19:57:55.640"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${OrderTestData.quantityOrdered()} * ${OrderTestData.price(name='${name}')}</arg>
+</arguments>
+<assign>
+<var>${expectedOrderSubtotal}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.641" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.641" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.641" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.641" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.641" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.642" level="INFO">${expectedOrderSubtotal} = 85</msg>
+<status status="PASS" endtime="20171204 19:57:55.642" starttime="20171204 19:57:55.640"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedOrderSubtotal}</arg>
+<arg>${orderSubtotalFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.642" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20171204 19:57:55.642" starttime="20171204 19:57:55.642"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.state()}</arg>
+</arguments>
+<assign>
+<var>${state}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.643" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.643" level="INFO">${state} = ND</msg>
+<status status="PASS" endtime="20171204 19:57:55.643" starttime="20171204 19:57:55.643"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${OrderTestData.salesTaxByState(state='${state}')}</arg>
+</arguments>
+<assign>
+<var>${expectedSalesTax}</var>
+</assign>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting sales tax...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting order subtotal...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting quantity ordered...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting price for giraffe...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting name...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting sales tax percent...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.644" level="INFO">Getting state...</msg>
+<msg timestamp="20171204 19:57:55.645" level="INFO">${expectedSalesTax} = 4.25</msg>
+<status status="PASS" endtime="20171204 19:57:55.645" starttime="20171204 19:57:55.643"></status>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${expectedSalesTax}</arg>
+<arg>${orderTaxesFloat}</arg>
+</arguments>
+<msg timestamp="20171204 19:57:55.646" level="INFO">Argument types are:
+&lt;type 'float'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20171204 19:57:55.646" level="FAIL">4.25 != 8.5</msg>
+<status status="FAIL" endtime="20171204 19:57:55.646" starttime="20171204 19:57:55.645"></status>
+</kw>
+<status status="FAIL" endtime="20171204 19:57:55.646" starttime="20171204 19:57:55.498"></status>
+</kw>
+<status status="FAIL" endtime="20171204 19:57:55.646" starttime="20171204 19:57:55.016"></status>
+</kw>
+<status status="FAIL" endtime="20171204 19:57:55.646" starttime="20171204 19:57:55.015"></status>
+</kw>
+<status status="FAIL" endtime="20171204 19:57:55.647" starttime="20171204 19:57:55.004"></status>
+</kw>
+<status status="FAIL" endtime="20171204 19:57:55.647" starttime="20171204 19:57:52.964"></status>
+</kw>
+<tags>
+<tag>order</tag>
+</tags>
+<status status="FAIL" endtime="20171204 19:57:55.647" critical="yes" starttime="20171204 19:57:51.350">4.25 != 8.5</status>
+</test>
+<doc>Suite description</doc>
+<status status="FAIL" endtime="20171204 19:57:55.648" starttime="20171204 19:57:51.215"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">order</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="OrderTest" pass="0">OrderTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

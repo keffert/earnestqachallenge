@@ -1,0 +1,61 @@
+active,name,quantityOrdered,state,result
+# jungle socks order test cases
+# active: 1 => active
+#         2 => smoke
+#         # => comment
+# name: zebra, lion, elephant, giraffe
+# quantityOrdered:
+# state: states of the USA
+# result: error codes/descriptions
+#
+1,lion,10,AL,
+1,lion,10,AK,
+1,lion,10,AZ,
+1,lion,10,AR,
+1,lion,10,CA,
+1,lion,10,CO,
+1,lion,10,CT,
+1,lion,10,DE,
+1,lion,10,FL,
+1,lion,10,GA,
+1,lion,10,HI,
+1,lion,10,ID,
+1,lion,10,IL,
+1,lion,10,IN,
+1,lion,10,IA,
+1,lion,10,KS,
+1,lion,10,KY,
+1,lion,10,LA,
+1,lion,10,ME,
+1,lion,10,MD,
+1,lion,10,MA,
+1,lion,10,MI,
+1,lion,10,MN,
+1,lion,10,MS,
+1,lion,10,MO,
+1,lion,10,MT,
+1,lion,10,NE,
+1,lion,10,NV,
+1,lion,10,NH,
+1,lion,10,NJ,
+1,lion,10,NM,
+1,lion,10,NY,
+1,lion,10,NC,
+1,lion,10,ND,
+1,lion,10,OH,
+1,lion,10,OK,
+1,lion,10,OR,
+1,lion,10,PA,
+1,lion,10,RI,
+1,lion,10,SC,
+1,lion,10,SD,
+1,lion,10,TN,
+1,lion,10,TX,
+1,lion,10,UT,
+1,lion,10,VT,
+1,lion,10,VA,
+1,lion,10,WA,
+1,lion,10,WV,
+1,lion,10,WI,
+1,lion,10,WY,
+# end of data

@@ -1,0 +1,54 @@
+Acceptance tests for Jungle Socks web site
+
+New feature:  adding sales taxes to sales dollar amounts based on state in shipping address
+
+Plan:
+  Explore the web site
+  Develop test framework and test engine to automate the tests cases
+  Develop the test cases and store in test data file
+  Run the automated tests
+  Store contents in Git
+
+Explore the web site
+  url: https://jungle-socks.herokuapp.com
+
+  landing page: JungleSocks
+    url: https://jungle-socks.herokuapp.com
+    contains:
+      text
+      form:
+        table of products
+          columns: Name, Price, InStock, Quantity (text input), [hidden name (text input)]
+
+        table of selections
+          columns: selection label, select state option
+
+        submit form contents button
+
+  conformation page: JungleSocks
+    url: https://jungle-socks.herokuapp.com/checkout/create
+    contains:
+      text
+      table [empty?]
+      table of lines:
+        first set of lines for ordered items
+          columns: Name, Price, Quantity
+
+        second set of lines for virtical spacing
+
+        third set of lines for dollar values
+          columns: label, amount in dollars
+
+  Example file only contains 3 states, the others seem to use 5% sales tax.  I know that Oregon does not have a sales tax
+
+  Quantity ordered does not seem to take into account quantity in stock
+
+  When state is not selected (default). the submit results in Error 500
+
+  No District of Columbia is selectable
+
+  When blank, 0, negative numbers, or letters are supplied for quantity, no lines are shown for confirmation and 0 is the total
+
+After running the automated tests with all states, I noticed that North Dakota used 2.5% sales tax, instead of the default 5%.
+
+
